@@ -1,0 +1,11 @@
+.control-button {
+    background-color: rgb(79, 79, 79);
+}
+
+.control-button:hover {
+    background-color: rgb(94, 94, 94);
+}
+
+.control-button:active {
+    background-color: rgb(65, 65, 65);
+}

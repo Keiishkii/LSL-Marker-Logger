@@ -1,0 +1,11 @@
+.connection-button {
+    background-color: rgb(48, 48, 48);
+}
+
+.connection-button:hover {
+    background-color: rgb(65, 65, 65);
+}
+
+.connection-button:active {
+    background-color: rgb(31, 31, 31);
+}

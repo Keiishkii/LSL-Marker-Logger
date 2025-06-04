@@ -1,0 +1,8 @@
+.absolute-scrollbar-container {
+}
+
+.absolute-scrollbar-container .unity-scroller--vertical {
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
