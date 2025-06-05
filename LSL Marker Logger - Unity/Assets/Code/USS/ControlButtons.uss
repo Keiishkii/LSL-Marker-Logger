@@ -1,5 +1,16 @@
 .control-button {
     background-color: rgb(79, 79, 79);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
 }
 
 .control-button:hover {
@@ -8,4 +19,49 @@
 
 .control-button:active {
     background-color: rgb(65, 65, 65);
+}
+
+.unity-button.control-button.button-toggle-active {
+    background-color: rgb(46, 46, 46);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.control-button.button-toggle-active:hover {
+    background-color: rgb(38, 38, 38);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.control-button.button-toggle-active:active {
+    background-color: rgb(29, 29, 29);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
 }
