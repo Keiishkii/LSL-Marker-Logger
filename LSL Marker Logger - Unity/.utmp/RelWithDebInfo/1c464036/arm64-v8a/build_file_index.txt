@@ -1,0 +1,2 @@
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt

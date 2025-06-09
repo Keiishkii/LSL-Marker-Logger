@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using LSL;
 using UnityEngine;
@@ -20,10 +21,12 @@ public class MarkerConsole : MonoBehaviour
 
     #region [ Unserialised Fields ]
     private UIDocument _uiDocument;
-    private readonly List<LogEntry> _displayedLogEntries = new ();
+    private readonly ObservableCollection<LogEntry> _displayedLogEntries = new ();
+    private bool _displayedLogEntriesDirty;
     private readonly List<LogEntry> _fullLogEntries = new ();
     private bool _autoScrolling;
     private IEnumerator _autoScrollCoroutine;
+    [NonSerialized] public bool Initialised;
     #endregion
 
     #region [ UXML Fields ]
@@ -37,12 +40,16 @@ public class MarkerConsole : MonoBehaviour
     private Button _autoScrollButton;
     #endregion
     
+    
+    
     private void Awake()
     {
         _uiDocument = GetComponent<UIDocument>();
         
         QueryUXML();
         Initialise();
+
+        Initialised = true;
     }
 
     private void QueryUXML()
@@ -60,6 +67,10 @@ public class MarkerConsole : MonoBehaviour
     private void Initialise()
     {
         _consoleLogListView.itemsSource = _displayedLogEntries;
+        _consoleLogListView.fixedItemHeight = 25;
+        _consoleLogListView.showBorder = false;
+        _consoleLogListView.virtualizationMethod = CollectionVirtualizationMethod.FixedHeight;
+        
         _consoleLogListView.makeItem += MakeItem;
         _consoleLogListView.bindItem += BindItem;
         
@@ -104,14 +115,12 @@ public class MarkerConsole : MonoBehaviour
         _autoScrollButton.clicked -= OnAutoScrollButtonPressed;
     }
 
-    private void OnFilterUpdated(ChangeEvent<string> evt)
+    private void LateUpdate()
     {
-        _displayedLogEntries.Clear();
-        
-        foreach (LogEntry logEntry in _fullLogEntries.Where(logEntry => SampleFilters(logEntry))) _displayedLogEntries.Add(logEntry);
-        _consoleLogListView.Rebuild();
+        UpdateListView();
     }
 
+    #region [ Stream List ]
     private void OnRefreshButton()
     {
         _streamScrollView.contentContainer.Clear();
@@ -144,31 +153,17 @@ public class MarkerConsole : MonoBehaviour
             };
         }
     }
+    #endregion
+
+    #region [ Filters ]
+    private void OnFilterUpdated(ChangeEvent<string> evt)
+    {
+        _displayedLogEntries.Clear();
+        
+        foreach (LogEntry logEntry in _fullLogEntries.Where(logEntry => SampleFilters(logEntry))) _displayedLogEntries.Add(logEntry);
+        _consoleLogListView.RefreshItems();
+    }
     
-    public void AddLog(in LogEntry logEntry)
-    {
-        if (_fullLogEntries.Count >= 1000)
-        {
-            _displayedLogEntries.Remove(_fullLogEntries[0]);
-            _fullLogEntries.RemoveAt(0);
-        }
-        
-        _fullLogEntries.Add(logEntry);
-        if (!SampleFilters(logEntry)) return;
-        
-        _displayedLogEntries.Add(logEntry);
-        _consoleLogListView.Rebuild();
-    }
-
-    private IEnumerator AutoScroll()
-    {
-        while (_autoScrolling)
-        {
-            _consoleLogListView.ScrollToItem(_displayedLogEntries.Count - 1);
-            yield return null;
-        }
-    }
-
     private bool SampleFilters(in LogEntry logEntry)
     {
         string contentFilter = _contentFilterField.text;
@@ -183,12 +178,41 @@ public class MarkerConsole : MonoBehaviour
             return content.Contains(filter);
         }
     }
+    #endregion
 
+    #region [ Log List ]
+    public void AddLog(in LogEntry logEntry)
+    {
+        if (_fullLogEntries.Count >= 1000)
+        {
+            _displayedLogEntries.Remove(_fullLogEntries[0]);
+            _fullLogEntries.RemoveAt(0);
+        }
+        
+        _fullLogEntries.Add(logEntry);
+        if (!SampleFilters(logEntry)) return;
+        
+        _displayedLogEntries.Add(logEntry);
+        _displayedLogEntriesDirty = true;
+    }
+
+    private void UpdateListView()
+    {
+        if (!_displayedLogEntriesDirty) return;
+        
+        _consoleLogListView.RefreshItems();
+
+        if (!_autoScrolling) return;
+        _consoleLogListView.ScrollToItem(-1);
+    }
+    #endregion
+
+    #region [ Control Buttons ]
     private void OnClearLogButtonPressed()
     {
         _displayedLogEntries.Clear();
         _fullLogEntries.Clear();
-        _consoleLogListView.Rebuild();
+        _consoleLogListView.RefreshItems();
     }
 
     private void OnAutoScrollButtonPressed()
@@ -197,13 +221,12 @@ public class MarkerConsole : MonoBehaviour
         
         if (_autoScrolling)
         {
-            StartCoroutine(_autoScrollCoroutine = AutoScroll());
             _autoScrollButton.AddToClassList("button-toggle-active");
         }
         else if (_autoScrollCoroutine != null)
         {
-            StopCoroutine(_autoScrollCoroutine);
             _autoScrollButton.RemoveFromClassList("button-toggle-active");
         }
     }
+    #endregion
 }

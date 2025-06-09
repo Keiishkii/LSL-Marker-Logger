@@ -1,0 +1,17 @@
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/GAToUnityCallbacks.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/MacroEnd.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/MacroHeaderBegin.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/MacroSourceBegin.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAApplication.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAConfiguration.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGADebug.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAEvents.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAInput.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGASoftKeyboard.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGASoftKeyboardCallbacks.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGATypes.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAVersion.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGACallbacks.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGAConfigurationCallbacks.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGAKeyEventCallbacks.h
+/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGAMotionEventCallbacks.h

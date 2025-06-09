@@ -124,7 +124,6 @@ public class NetworkManager : MonoBehaviour
             for (int i = 0; i < channelCount; i++) content += $"{sample[i]}{(i + 1 < channelCount ? ", " : "")}";
             
             DateTime time = DateTime.UnixEpoch.AddSeconds(timestamp);
-            
             MarkerConsole.Instance.AddLog(new LogEntry()
             {
                 time = $"{time:HH:mm:ss.fff}",

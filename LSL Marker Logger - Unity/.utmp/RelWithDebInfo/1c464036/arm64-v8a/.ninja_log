@@ -1,0 +1,10 @@
+# ninja log v5
+2	815	1749207816406161456	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f368c072145a7e75
+1	825	1749207816417684589	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a6882bef9b9bec3
+2	837	1749207816429146032	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	212e4de1931bae26
+0	842	1749207816434981893	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2ac192835f473d05
+1	893	1749207816483826366	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	d7583a150f1a0cb6
+2	895	1749207816488563347	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b5a9a88b64c15da6
+1	1106	1749207816698767702	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	5017e9516fbb332f
+0	1182	1749207816773570041	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	acdf2917cdd91a8b
+1182	1211	1749207816807371460	/mnt/Git/MINE/LSL-Marker-Logger/LSL Marker Logger - Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1c464036/obj/arm64-v8a/libgame.so	698e98cc90bb19eb
