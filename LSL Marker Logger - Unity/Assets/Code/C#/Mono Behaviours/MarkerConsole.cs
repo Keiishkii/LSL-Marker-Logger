@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using LSL;
+using MINE;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -124,7 +125,7 @@ public class MarkerConsole : MonoBehaviour
     private void OnRefreshButton()
     {
         _streamScrollView.contentContainer.Clear();
-        if (!NetworkManager.Instance.ResolveStreams(out StreamInfo[] streamInfoArray)) return;
+        if (!NetworkManager.Instance.Inlet.ResolveStreams(out StreamInfo[] streamInfoArray)) return;
         
         for (var i = 0; i < streamInfoArray.Length; i++)
         {
@@ -147,7 +148,7 @@ public class MarkerConsole : MonoBehaviour
             
             streamConnectionButton.clicked += () =>
             {
-                bool connected = NetworkManager.Instance.ToggleStreamConnection(streamInfo);
+                bool connected = NetworkManager.Instance.Inlet.ToggleStreamConnection(streamInfo);
                 streamConnectionButton.text = (connected) ? "Disconnect" : "Connect";
                 selectedVisualElement.style.display = (connected) ? DisplayStyle.Flex : DisplayStyle.None;
             };
